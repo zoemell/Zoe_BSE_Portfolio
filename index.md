@@ -59,7 +59,7 @@ sudo apt install python3.11-venv
 python -m venv env --system-site-packages
 source env/bin/activate
 ```
-Setting up a virtual enviorment and installing python
+<sub>Setting up a virtual enviorment and installing python</sub>
 
 I then updated and upgraded my Raspberry Pi so that everything in the Raspberry pi was up to date. Then I had to download python onto my Raspberry Pi so I could utilize it to use other libraries later on. I did this on a virtual environment, a space where you can install different versions of software or libraries without them interfering with each other. 
 
@@ -69,7 +69,7 @@ sudo pip3 install --upgrade adafruit-python-shell
 wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py
 sudo python3 raspi-blinka.py
 ```
-Installing dependencies 
+<sub>Installing dependencies</sub>
 
 This code ensured my Pi was configured correctly and mostly just installed the dependencies, the building blocks or "ingredients" that software relies on to do its job effectively. After all that was downloaded onto my Pi it was time to attach my camera and test it out to ensure it worked. 
 
@@ -90,7 +90,7 @@ python3
 import cv2
 cv2.__version__
 ```
-Making a new directory and downloading OpenCV and Picamera libraries
+<sub>Making a new directory and downloading OpenCV and Picamera libraries</sub>
 
 First I wanted to make a new directory called project, which is basically making a new folder to store things. Then I activated a new virtual environment since I would be downloading a lot of packages and libraries. Next, I needed to install a bunch of system packages, which provide essential tools and updates that allow your operating system and applications to work correctly and securely. After that was done, I installed two libraries called picamera and opencv which allowed my pi to work with the camera and get data from the camera. 
 
@@ -101,7 +101,7 @@ import tflite_runtime
 tflite_runtime.__version__
 quit()
 ```
-Installing Tensorflow Lite
+<sub>Installing Tensorflow Lite</sub>
 
 Following this I was able to install Tensorflow Lite which provides pre-trained models for various tasks like object detection, which is trained on labeled data. Once the pre-trained model is integrated, the tensorflow lite interpreter runs an inference on input images fed into the model and outputs detection. This means it takes the input images, puts it through its network and performs a variety of math operations. After, it produces an output with a confidence score of how certain the model is that the input is a certain object. 
 
@@ -111,7 +111,7 @@ sh setup.sh
 sudo apt-get install libatlas-base-dev
 python3 classify.py
 ```
-Installing pre-trained Tensorflow Lite ML model 
+<sub>Installing pre-trained Tensorflow Lite ML model</sub>
 
 insert picture of image classification here
 
