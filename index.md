@@ -43,15 +43,96 @@ For your second milestone, explain what you've worked on since your previous mil
 -->
 # First Milestone
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
+<!--- **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.** -->
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/O-T2S3FNzZ4?si=XUDs_auTNl4_j2Pt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-For your first milestone, describe what your project is and how you plan to build it. You can include:
-- An explanation about the different components of your project and how they will all integrate together
-- Technical progress you've made so far
-- Challenges you're facing and solving in your future milestones
-- What your plan is to complete your project
+For my first milestone I performed object recognition using machine learning. I ran this on a Raspberry Pi (a credit card sized computer) and a Pi Camera. 
+
+**How I did this:** 
+First I needed to setup up my Raspberry pi. My main guide in doing so was Adafruit’s tutorial (see resource 1 below). First I chose the Raspberry Pi operating system (OS) (64 bit) since that was most compatible with my Pi. 
+
+```shell
+sudo apt update 
+sudo apt upgrade
+sudo apt install python3.11-venv
+python -m venv env --system-site-packages
+source env/bin/activate
+```
+Setting up a virtual enviorment and installing python
+
+I then updated and upgraded my Raspberry Pi so that everything in the Raspberry pi was up to date. Then I had to download python onto my Raspberry Pi so I could utilize it to use other libraries later on. I did this on a virtual environment, a space where you can install different versions of software or libraries without them interfering with each other. 
+
+```shell
+cd ~
+sudo pip3 install --upgrade adafruit-python-shell
+wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py
+sudo python3 raspi-blinka.py
+```
+Installing dependencies 
+
+This code ensured my Pi was configured correctly and mostly just installed the dependencies, the building blocks or "ingredients" that software relies on to do its job effectively. After all that was downloaded onto my Pi it was time to attach my camera and test it out to ensure it worked. 
+
+```shell
+libcamera-hello
+```
+
+I connected the camera to the pi and needed to test it. I typed out this command to test my camera and it turned on and it started working by showing a live feed window of what the camera sees. After the camera was working it was time to implement the object detection. I followed a tutorial by Sam Westby Tech to download the necessary libraries to get the object detection working.
+
+```shell
+mkdir project
+cd project
+source env_tf/bin/activate
+sudo apt install -y build-essential cmake pkg-config libjpeg-dev libtiff5-dev libpng-dev libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libxvidcore-dev libx264-dev libfontconfig1-dev libcairo2-dev libgdk-pixbuf2.0-dev libpango1.0-dev libgtk2.0-dev libgtk-3-dev libatlas-base-dev gfortran libhdf5-dev libhdf5-serial-dev libhdf5-103 libqt5gui5 libqt5webkit5 libqt5test5 python3-pyqt5 python3-dev
+pip install "picamera[array]"
+Pip install opencv-python
+python3
+import cv2
+cv2.__version__
+```
+Making a new directory and downloading OpenCV and Picamera libraries
+
+First I wanted to make a new directory called project, which is basically making a new folder to store things. Then I activated a new virtual environment since I would be downloading a lot of packages and libraries. Next, I needed to install a bunch of system packages, which provide essential tools and updates that allow your operating system and applications to work correctly and securely. After that was done, I installed two libraries called picamera and opencv which allowed my pi to work with the camera and get data from the camera. 
+
+```shell
+python3 -m pip install tflite-runtime
+python3
+import tflite_runtime
+tflite_runtime.__version__
+quit()
+```
+Installing Tensorflow Lite
+
+Following this I was able to install Tensorflow Lite which provides pre-trained models for various tasks like object detection, which is trained on labeled data. Once the pre-trained model is integrated, the tensorflow lite interpreter runs an inference on input images fed into the model and outputs detection. This means it takes the input images, puts it through its network and performs a variety of math operations. After, it produces an output with a confidence score of how certain the model is that the input is a certain object. 
+
+```shell
+git clone https://github.com/tensorflow/examples --depth 1
+sh setup.sh
+sudo apt-get install libatlas-base-dev
+python3 classify.py
+```
+Installing pre-trained Tensorflow Lite ML model 
+
+insert picture of image classification here
+
+Afterwards I downloaded a pre-made machine learning data set that Tensorflow Lite created so I could use it for my object detection. Then I tested it by executing the python script “python3 classify.py” which runs the code in the file classify.py and my object detection was working!
+
+insert the canva pic
+
+**Challenges:**
+The tutorial I was following for setting up my camera was a bit outdated and instructed me to turn on settings on my pi that actually were not compatible with the code I was running. Therefore my camera was not turning on. After realizing this I turned off the settings the tutorial had me turn on and my camera started working!
+
+```shell
+python3 -m pip install --upgrade tflite-support==0.4.3
+```
+
+Also, when downloading Tensorflow Lite I got an error message. Through searching google I found out it was because a package within the Tensorflow Lite library was not compatible with my versions of python and opencv. Therefore I had to execute a command that downgraded the version of that package so it was compatible with my versions of python and opencv. Once I did that Tensorflow Lite downloaded!
+
+Additionally, the image classification is not the most accurate because it's a pre-trained model so in future milestones I hope to be able to narrow down the classifications so it only tells the user when it is pretty sure of its object classification. 
+
+**Future Plan**
+I want to get the classification to be told out loud through the ear piece and put it onto the glasses. This aspect is essential to my project because it allows the user to be able to hear what the classification is that Tensorflow Lite has detected. Based on a study from ARVO journals, in 2020 there were 49.1 million people who were blind globally. Therefore it is crucial that these people have a device that enables them to navigate their everyday lives more easily and be able to detect object they run into during their days. 
+
 <!---
 # Schematics 
 Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
