@@ -113,7 +113,7 @@ python3 classify.py
 ```
 <sub>Installing pre-trained Tensorflow Lite ML model</sub>
 
-insert picture of image classification here
+<img src ="" width = "400" />
 
 Afterwards I downloaded a pre-made machine learning data set that Tensorflow Lite created so I could use it for my object detection. Then I tested it by executing the python script “python3 classify.py” which runs the code in the file classify.py and my object detection was working!
 
