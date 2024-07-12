@@ -72,7 +72,43 @@ After I imported the TTS model into my code, I initialized the engine using the 
 ```
 <sub>Showing the classification code and the print function that prints above a score of 0.6</sub>
 
-<img src="" alt="Showing the printing to the console" height="400" width="500">
+<img src="score_specific.png" alt="Showing the printing to the console" height="500" width="700">
+
+My next step was to get the model to print only the high confidence scores into my console so that they would be the correct object feasibly. I chose a score greater than or equal to 0.6, which means the model is 60% sure that the input object is that exact classification. I noticed that when objects were wrongly detected, they usually had very low confidence scores. Therefore, 60% is a suitable tested threshold for the model. I wrote an if statement that checks if the score is greater than or equal to 0.6, and then if that returns true, it prints the category name and score to the console. 
+
+```python
+engine.say(category_name) #uses text-to-speech engine to speak category name
+engine.runAndWait() #ensures the TTS engine finishes speaking before continuing
+```
+<sub>Code showing speak and wait functions of the TTS model</sub>
+
+After I got the model to print only the classifications with a confidence score of 0.6 and above it was time to get the model to actually say those classifications. So I wrote the line “engine.say(category_name)” which says only the category name of the classifications with a confidence score of 0.6 and above. The final step was the let the TTS engine know to wait until it finishes speaking a word to continue with the next word. 
+
+```shell
+Speaker-test -c4 -twav -13
+```
+<sub>Code testing the speaker</sub>
+
+I then tested the earpiece using the code above before running my classification code to ensure it was working correctly and that I could hear the words well. After I confirmed the price was working, it was time to run the “python3 classify.py” script, and it worked!
+
+After I completed the TTS model, I wanted to start profiling my code and adding comments to make it easier for myself and others to understand. See the complete code below.
+
+**What surprised me so far:**
+So far, I’ve been surprised by how many resources there are on the Internet for coding and engineering in general. When in doubt, if I run into an error and Google it, there is usually someone who has gone through a similar difficulty and solved the problem. I love how open the engineering community is and how willing everyone is to help out each other. This culture of sharing knowledge has empowered me to develop significantly as an engineer. It has allowed me to independently tackle challenges by conducting research and investing time, without having to rely on the immediate availability of a teacher or mentor.
+
+**Challenges:**
+My main challenge with this milestone was writing the code for speaking the classification out loud without researching return values. Return values are how functions communicate what they have done or calculated back to the rest of your program. However, originally, I put the entire print statement into my speak function. 
+
+```python
+engine.say(print("{} {}".format(category_name, score))
+```
+<sub>Speak function that would return "none"</sub>
+
+The problem with doing so is that print does not have a return value because its purpose is just to print text onto the console. Therefore, my earpiece kept saying “none” for every object classification. It took me a while to figure out what the TTS model was saying and then out why it was saying “none”. After I realized it was because I put the print statement into my speak function, I quickly changed this to “category_name” and it was working. 
+
+**Next:**
+
+I need to make sure I attach the Raspberry Pi, the camera, and the earpiece to my glasses before reaching my final milestone. After that, I will test all the components using a portable charger to ensure everything works properly and can be portable. 
 
 
 # First Milestone
