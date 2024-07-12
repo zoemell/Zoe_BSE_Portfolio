@@ -117,7 +117,7 @@ python3 classify.py
 
 Afterwards I downloaded a pre-made machine learning data set that Tensorflow Lite created so I could use it for my object detection. Then I tested it by executing the python script “python3 classify.py” which runs the code in the file classify.py and my object detection was working!
 
-![how the libraries and software downloaded works together](RaspberryPi.png)
+<img src="RaspberryPi.png" alt="how libraries work" width="400" height="500">
 
 **Challenges:**
 The tutorial I was following for setting up my camera was a bit outdated and instructed me to turn on settings on my pi that actually were not compatible with the code I was running. Therefore my camera was not turning on. After realizing this I turned off the settings the tutorial had me turn on and my camera started working!
