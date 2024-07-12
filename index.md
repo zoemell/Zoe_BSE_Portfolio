@@ -25,22 +25,56 @@ For your final milestone, explain the outcome of your project. Key details to in
 - What you've accomplished since your previous milestone
 - What your biggest challenges and triumphs were at BSE
 - A summary of key topics you learned about
-- What you hope to learn in the future after everything you've learned at BSE
+- What you hope to learn in the future after everything you've learned at BSE-->
 
 
 
 # Second Milestone
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-For your second milestone, explain what you've worked on since your previous milestone. You can highlight:
-- Technical details of what you've accomplished and how they contribute to the final goal
-- What has been surprising about the project so far
-- Previous challenges you faced that you overcame
-- What needs to be completed before your final milestone 
--->
+For my second milestone, I implemented a text-to-speech model (TTS) into my project, which takes the classification and reads it out loud into an earpiece. 
+
+**How I did this:**
+I started by researching different text-to-speech models on the Internet. I landed on the pyttsx3 model, which is a pre-trained model that works well with the Raspberry Pi due to its straightforward Python interface, offline functionality, customizable speech parameters, and compatibility with Python 3. 
+
+```shell
+Pip install pyttsx3
+```
+```python
+Import pyttsx3
+```
+<sub>Installing and importing pyttsx3</sub>
+
+First, I installed the TTS model into my console so I could import it into my Python file, where my script is running to perform the object recognition. 
+
+```python
+#intializes the text to speech engine using the pyttsx3 library 
+engine = pyttsx3.init()
+engine.setProperty(‘rate’, 90) #speed of speech (wpm)
+engine.setProperty(‘volume’, 1.0) #volume of speech (scale of 0.0 - 1.0)
+```
+<sub>creating engine and setting properties for speech</sub>
+
+After I imported the TTS model into my code, I initialized the engine using the pyttsx3 library. This means I set up a TTS engine that can convert written text into spoken words using the data from the pyttsx3 library. I then set the speed and volume of the speech to 90 words per minute (wpm) and the loudest volume. 
+
+```python
+# Show classification results on the image
+    for idx, category in enumerate(categories.classifications[0].categories): #iterates through each category detected by the classifier
+      category_name = category.category_name #retrieves name of category
+      score = round(category.score, 2) #rounds confidence score of the category to 2 decimal places
+      result_text = category_name + ' (' + str(score) + ')' #text string that combines the category name and score
+      text_location = (_LEFT_MARGIN, (idx + 2) * _ROW_SIZE) #determines position where text will be displayed on the image
+      cv2.putText(image, result_text, text_location, cv2.FONT_HERSHEY_PLAIN,
+                  _FONT_SIZE, _TEXT_COLOR, _FONT_THICKNESS) #draws text onto image at the specified location
+      if score >= 0.6: #checks if confidence score is greater than or equal to 0.6
+          print("{} {}".format(category_name, score)) #prints the category name and score to the console
+```
+<sub>Showing the classification code and the print function that prints above a score of 0.6</sub>
+
+<img src="" alt="Showing the printing to the console" height="400" width="500">
+
+
 # First Milestone
 
 <!--- **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.** -->
@@ -113,7 +147,7 @@ python3 classify.py
 ```
 <sub>Installing pre-trained Tensorflow Lite ML model</sub>
 
-!<img src="objectrecognition.jpeg" alt="window with the object recognition" height="400" width="500">
+<img src="objectrecognition.jpeg" alt="window with the object recognition" height="400" width="500">
 
 Afterwards I downloaded a pre-made machine learning data set that Tensorflow Lite created so I could use it for my object detection. Then I tested it by executing the python script “python3 classify.py” which runs the code in the file classify.py and my object detection was working!
 
