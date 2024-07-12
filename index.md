@@ -13,7 +13,7 @@ You should comment out all portions of your portfolio that you have not complete
 
 <!--- **Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.** -->
 
-![Headshot Image](headshot.png)
+<img src="headshot.png" alt="picture of Zoe" height="400" width="300">
   
 <!--- # Final Milestone
 
@@ -113,7 +113,7 @@ python3 classify.py
 ```
 <sub>Installing pre-trained Tensorflow Lite ML model</sub>
 
-![object recognition live feed window](objectrecognition.jpeg)
+!<img src="objectrecognition.jpeg" alt="window with the object recognition" height="400" width="500">
 
 Afterwards I downloaded a pre-made machine learning data set that Tensorflow Lite created so I could use it for my object detection. Then I tested it by executing the python script “python3 classify.py” which runs the code in the file classify.py and my object detection was working!
 
