@@ -177,6 +177,7 @@ Following this I was able to install Tensorflow Lite which provides pre-trained 
 
 ```shell
 git clone https://github.com/tensorflow/examples --depth 1
+cd examples/lite/examples/image_classification/raspberry_pi/
 sh setup.sh
 sudo apt-get install libatlas-base-dev
 python3 classify.py
