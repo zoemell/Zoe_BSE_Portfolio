@@ -26,7 +26,7 @@ For my third milestone, I wanted to attach the camera to the glasses and ensure 
 
 **How I did this:**
 
-Before I could attach my camera and use a power bank with my Pi, I needed to download a new object detection model to my Pi because my SD card got corrupted, and I needed to start over. My main guide was a tutorial by Adafruit. I started with reimaging a new SD card and starting fresh. I updated and upgraded my Pi and setup a virtual environment, a self-contained directory that allows you to install and manage dependencies separately from other projects on the same computer.
+Before I could attach my camera and use a power bank with my Pi, I needed to download a new object detection model to my Pi because my SD card got corrupted, and I needed to start over. My main guide was a tutorial by Adafruit (see resource 1 below). I started with reimaging a new SD card and starting fresh. I updated and upgraded my Pi and setup a virtual environment, a self-contained directory that allows you to install and manage dependencies separately from other projects on the same computer.
 
 ```shell
 cd ~
@@ -242,7 +242,7 @@ This code ensured my Pi was configured correctly and mostly just installed the d
 libcamera-hello
 ```
 
-I connected the camera to the pi and needed to test it. I typed out this command to test my camera and it turned on and it started working by showing a live feed window of what the camera sees. After the camera was working it was time to implement the object detection. I followed a tutorial by Sam Westby Tech to download the necessary libraries to get the object detection working.
+I connected the camera to the pi and needed to test it. I typed out this command to test my camera and it turned on and it started working by showing a live feed window of what the camera sees. After the camera was working it was time to implement the object detection. I followed a tutorial by Sam Westby Tech to download the necessary libraries to get the object detection working (see resource 2 below).
 
 ```shell
 mkdir project
@@ -547,10 +547,8 @@ Don't forget to place the link of where to buy each component inside the quotati
 | Glasses | Allows user to wear the device | $5.99 | <a href="https://www.amazon.com/dp/B0BSF4PL2Q?ref=cm_sw_r_cso_cp_apin_dp_9G1KS2KBDABJZ2GR6485&ref_=cm_sw_r_cso_cp_apin_dp_9G1KS2KBDABJZ2GR6485&social_share=cm_sw_r_cso_cp_apin_dp_9G1KS2KBDABJZ2GR6485&starsLeft=1"> Link </a> |
 | Wires | Enables everything to be connected to allow information to flow | $6.98 | <a href="https://www.amazon.com/dp/B01EV70C78?ref=cm_sw_r_cso_cp_apin_dp_CCVPR26GTMPF9EXHBMFR&ref_=cm_sw_r_cso_cp_apin_dp_CCVPR26GTMPF9EXHBMFR&social_share=cm_sw_r_cso_cp_apin_dp_CCVPR26GTMPF9EXHBMFR&starsLeft=1"> Link </a> |
 
-<!---# Other Resources/Examples
-One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
-- [Example 1](https://trashytuber.github.io/YimingJiaBlueStamp/)
-- [Example 2](https://sviatil0.github.io/Sviatoslav_BSE/)
-- [Example 3](https://arneshkumar.github.io/arneshbluestamp/)
-
+# Other Resources/Examples
+- [Resource 1] https://learn.adafruit.com/running-tensorflow-lite-on-the-raspberry-pi-4/initial-setup
+- [Resource 2] https://www.youtube.com/watch?v=NPXBRX7N3ec
+<!---
 To watch the BSE tutorial on how to create a portfolio, click here. -->
