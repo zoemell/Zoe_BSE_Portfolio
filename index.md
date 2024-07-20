@@ -14,7 +14,7 @@ This project involves developing a pair of object recognition glasses, allowing 
 
 <!--- **Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.** -->
 
-<img src="headshot.png" alt="picture of Zoe" height="400" width="300">
+<img src="headshotwithproject.jpeg" alt="picture of Zoe with project" height="400" width="300">
   
 # Final Milestone
 <!---
@@ -101,7 +101,7 @@ Then it was time to add the TTS model and earpiece to my project. I first plugge
 
 After the software was working, I needed to put the glasses together by putting both the camera and the ear piece onto the glasses. However, I didnt want to glue the camera directly onto the glasses because there were electrical components that could easily be ruined with hot glue. I decided I needed to use computer aided design (CAD) to 3D print a cover for the back of the camera.
 
-<!---<img src="objectdetectionV2.jpg" alt="Showing the object recognition working." height="400" width="600">-->
+<img src="CAD.jpeg" alt="Showing the CAD design" height="400" width="600">
 <img src="cameraonglasses.jpg" alt="Camera glued to the glasses." height="400" width="600">
 
 I took measurements of both the perimeter of the camera as well as the diameter and distance of the holes in the camera as well. I then created my design seen above and sent it to the 3D printer. Once I got my cover I screwed it onto the camera with nails and then hot glued the case onto the glasses, as seen above. I opted to keep the ear piece disconnected from the glasses so due to many people having unique sizing of their ears relative to their head, so I didn't want to limit anyone from being able to use the glasses. 
