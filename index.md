@@ -60,7 +60,7 @@ git clone --depth 1 https://github.com/adafruit/rpi-vision.git
 cd rpi-vision
 pip3 install -e .
 ```
-<sub>Installing spi-vision</sub>
+<sub>Installing rpi-vision</sub>
 
 I then was able to install rpi-vision which is the name of the program that executes the object recognition using the MobileNet V2 machine learning model to detect objects. 
 
